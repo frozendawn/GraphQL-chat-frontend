@@ -1,0 +1,12 @@
+.Chat_send_button {
+  width: "auto";
+  padding: 15px;
+  border-radius: 50%;
+  height: "100%";
+  margin-left: 10px;
+}
+
+.Chat_send_button:hover {
+  cursor: pointer;
+  background-color: #f2f3f5;
+}

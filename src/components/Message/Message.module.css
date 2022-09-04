@@ -1,0 +1,33 @@
+.Container {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 3px 0;
+}
+
+.Message_home_bubble {
+  align-self: flex-end;
+  overflow: hidden;
+  background-color: rgb(0, 132, 255);
+  color: #e4e6eb;
+  border-radius: 20px;
+}
+
+.Message_away_bubble {
+  align-self: flex-start;
+
+  align-items: center;
+  overflow: hidden;
+}
+
+.MessageAway {
+  margin-left: 5px;
+  border-radius: 20px;
+  background-color: #e4e6eb;
+  padding: 0px 12px;
+}
+
+.MessageHome {
+  line-height: 20px;
+  padding: 0px 12px;
+}

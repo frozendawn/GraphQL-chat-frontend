@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import { Routes, Route, Navigate } from "react-router-dom";
+import Chat from "./pages/Chat/Chat";
+import SignIn from "./pages/SignIn/SignIn";
+import Signup from "./pages/Signup/Signup";
+import { useContext } from "react";
+import UserContext from "./components/context/user-context";
 
 function App() {
+  const userCtx = useContext(UserContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            userCtx.signedIn ? <Chat /> : <Navigate replace to={"signin"} />
+          }
+        />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
     </div>
   );
 }
