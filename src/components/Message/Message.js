@@ -7,7 +7,7 @@ const Message = ({message}) => {
   const { user } = useContext(UserContext)
   return (
     <div className={`${styles.Container} ${user && user.id === message.author.id ? styles.Message_home_bubble : styles.Message_away_bubble}`}>
-      {user && user.id !== message.author.id && <Avatar sx={{padding: '5px'}} alt="Remy Sharp" src={user.avatar} />}
+      {user && user.id !== message.author.id && <Avatar sx={{padding: '5px'}} alt="Remy Sharp" src={message.author.avatar} />}
       <div className={user && user.id === message.author.id ? styles.MessageHome : styles.MessageAway}>
         <p>{message.message}</p>
       </div>
